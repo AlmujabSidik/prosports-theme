@@ -1,0 +1,495 @@
+{{ 'css-section-product-grid-loadmore.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.fullwidth -%}
+	{%- assign container = 'container-full' -%}
+{%- elsif section.settings.max_width != blank -%}
+	{%- assign container = 'bwp-container' -%}
+{%- else -%}
+	{%- assign container = 'container' -%}
+{%- endif -%}
+
+{%- assign max_width = '' -%}
+{%- if section.settings.fullwidth == blank and section.settings.max_width != blank -%}
+	{%- assign width_container = section.settings.max_width | plus: 0 -%}
+	{%- capture max_width -%}style="max-width: {{ section.settings.max_width }};"{%- endcapture -%}
+{%- endif -%}
+
+{% assign margin 	= section.settings.margin | split: "|" %}
+{% assign padding 	= section.settings.padding | split: "|" %}
+{%- style -%}
+	{%- if margin[0] != blank or padding[0] != blank -%}
+		#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore{
+			{%- if margin[0] != blank -%}margin: {{ margin[0] }};{%- endif -%}
+			{%- if padding[0] != blank -%}padding:{{ padding[0] }};{%- endif -%}
+		}
+	{%- endif -%}
+	{%- if margin[1] != blank or padding[1] != blank -%}
+		@media (max-width:1200px){
+			#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore{
+				{%- if margin[1] != blank -%}margin: {{ margin[1] }};{%- endif -%}
+				{%- if padding[1] != blank -%}padding:{{ padding[1] }};{%- endif -%}
+			}
+		}
+	{%- endif -%}
+	{%- if margin[2] != blank or padding[2] != blank -%}
+		@media (max-width:991px){
+			#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore{
+				{%- if margin[2] != blank -%}margin: {{ margin[2] }};{%- endif -%}
+				{%- if padding[2] != blank -%}padding:{{ padding[2] }};{%- endif -%}
+			}
+		}
+	{%- endif -%}
+	{%- if margin[3] != blank or padding[3] != blank -%}
+		@media (max-width:767px){
+			#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore{
+				{%- if margin[3] != blank -%}margin: {{ margin[3] }};{%- endif -%}
+				{%- if padding[3] != blank -%}padding:{{ padding[3] }};{%- endif -%}
+			}
+		}
+	{%- endif -%}
+	{%- if section.blocks.size > 0 -%}
+		{%- for block in section.blocks -%}
+			{%- if block.type == 'css' -%}
+				#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore .product-more{
+					text-align: {{ block.settings.text_align }};
+				}
+				#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore .product-more--btn{
+					font-size:{{ block.settings.font_size_button }}px;
+					line-height:{{ block.settings.line_height_button }}px;
+					font-weight:{{ block.settings.font_weight_button }};
+					letter-spacing:{{ block.settings.letter_spacing_button }}px;
+					color:{{ block.settings.color_button }};
+					padding:{{ block.settings.padding_button }};
+					margin:{{ block.settings.margin_button }};
+					border-radius:{{ block.settings.border_radius_button }};
+					background:{{ block.settings.background_button }};
+				}
+				{%- if block.settings.border -%}
+					#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore .product-more--btn{
+						border-width:{{ block.settings.border_width }};
+						border-color:{{ block.settings.border_color }};
+						border-style:solid;
+					}
+				{%- endif -%}
+				#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore .product-more--btn:before {
+					background:{{ block.settings.background_hover_button }};
+				}
+				#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore .product-more--btn:hover{
+					color:{{ block.settings.color_hover_button }};
+					border-color:{{ block.settings.border_color_hover }};
+				}
+				#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore .product-more--btn i{
+					font-size:{{ block.settings.font_icon }}px;
+					top:{{ block.settings.pos_top }}px;
+					left:{{ block.settings.pos_left }}px;
+					position:relative;
+					display: block;
+				}
+				@media(max-width:767px){
+					#shopify-section-{{ section.id }} .wpbingo-section--product-grid-loadmore .product-more--btn{
+						font-size:{{ block.settings.font_size_button_mobi }}px;
+						line-height:{{ block.settings.line_height_button_mobi }}px;
+						padding:{{ block.settings.padding_button_mobi }};
+						margin:{{ block.settings.margin_button_mobi }};
+					}
+				}
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endif -%}
+{%- endstyle -%}
+
+{%- assign collection_handle = section.settings.featured_products -%}
+{%- assign columns = section.settings.columns -%}
+{%- assign column1440 = section.settings.column1440 -%}
+{%- assign column1 = section.settings.column1 -%}
+{%- assign column2 = section.settings.column2 -%}
+{%- assign column3 = section.settings.column3 -%}
+{%- assign column4 = section.settings.column4 -%}
+{% capture col_gird %}
+  {% if columns == 5 %} col-xl-2-5{% else %} col-xl-{{ 12 | divided_by: columns }}{% endif %}
+  {% if column1440 == 5 %} col-xx-2-5{% else %} col-xx-{{ 12 | divided_by: column1440 }}{% endif %}
+  {% if column1 == 5 %} col-lg-2-5{% else %} col-lg-{{ 12 | divided_by: column1 }}{% endif %}
+  {% if column2 == 5 %} col-md-2-5{% else %} col-md-{{ 12 | divided_by: column2 }}{% endif %}
+  {% if column3 == 5 %} col-sm-2-5{% else %} col-sm-{{ 12 | divided_by: column3 }}{% endif %}
+  {% if column4 == 5 %} col-2-5{% else %} col-{{ 12 | divided_by: column4 }}{% endif %}
+{% endcapture %}
+
+<section class="wpbingo-section--{{ section.id }} wpbingo-section--product-grid-loadmore load-more product-grid overflow-hidden">
+  <div class="{{ container }}" {{ max_width }}>
+    <div class="wpbingo-section__inner">
+      <div class="wpbingo-section__content">
+			<div class="tab-content product-tabs__content">
+				{%- assign limit = section.settings.limit | plus: 0 -%}
+				<div class="load-more" id="product-grid-{{ section.id }}{{ forloop.index }}">
+					{%- if collection_handle == blank or collections[collection_handle] == empty or collections[collection_handle].products_count == 0 -%}
+						<div class="row">
+							{% include 'onboarding-featured-products' %}
+						</div>
+					{%- else -%}
+						{% paginate collections[collection_handle].products by limit %}
+							<div class="product-more__content loadmore-{{ section.id }}-{{ forloop.index }}" data-id="loadmore-{{ section.id }}-{{ forloop.index }}">
+								<div class="row">
+									{%- for product in collections[collection_handle].products limit: limit -%}
+										<div class="slick-carousel__item {{ col_gird }}">
+											{% include 'product-grid-item' %}
+										</div>
+									{%- endfor -%}
+								</div>
+								{%- if paginate.next -%}
+									<div class="product-more">
+										<a class="product-more--btn" href="{{ paginate.next.url }}">
+											<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+											<span>{{ section.settings.btn_loadmore }}</span>
+											<i class="{{ section.settings.icon_title }}"></i>
+										</a>
+									</div>
+								{%- else -%}
+									<div class="d-flex justify-content-center ">
+										<a class="disableLoadMore d-none " href="javascript:void(0);">
+											<span>{{ section.settings.btn_loadmore }}</span>
+										</a>
+									</div>
+								{%- endif -%}
+							</div>
+							<div class="product-more__bottom-loadmore-{{ section.id }}-{{ forloop.index }}"></div>
+						{% endpaginate %}
+					{%- endif -%}
+				</div>
+			</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product grid loadmore",
+  "class": "wpbingo-framework",
+  "settings": [
+    {
+		"type": "header",
+		"content": "Layout settings"
+	},
+	{
+		"type": "text",
+		"id": "max_width",
+		"label": "Width container",
+		"info": "Default: 1440px"
+	},
+	{
+		"type": "checkbox",
+		"id": "fullwidth",
+		"label": "Fullwidth"
+	},
+	{
+		"type": "text",
+		"id": "padding",
+		"label": "Padding",
+		"placeholder": "0px 0px 0px 0px",
+		"info":"Screen: desktop | 1200px | 991px | 767px"
+	},
+	{
+		"type": "text",
+		"id": "margin",
+		"label": "Margin",
+		"placeholder": "0px 0px 0px 0px",
+		"info":"Screen: desktop | 1200px | 991px | 767px"
+	},
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+	{
+		"type": "collection",
+		"id": "featured_products",
+		"label": "Collection"
+	},
+	{
+		"type": "range",
+		"id": "limit",
+		"min": 1,
+		"max": 20,
+		"step": 1,
+		"label": "Number of products",
+		"default": 8
+	},
+	{
+		"type": "text",
+		"id": "btn_loadmore",
+		"label": "Button load more",
+		"default": "Load more"
+	},
+	{
+		"type": "text",
+		"id": "icon_title",
+		"label": "Icon title"
+	},
+	{
+		"type": "range",
+		"id": "columns",
+		"min": 1,
+		"max": 5,
+		"step": 1,
+		"label": "Number of Columns >1440px",
+		"default": 4,
+		"info": "Desktops"
+	},
+	{
+		"type": "range",
+		"id": "column1440",
+		"min": 1,
+		"max": 5,
+		"step": 1,
+		"label": "Number of Columns 1200px to 1440px",
+		"default": 4,
+		"info": "Desktops"
+	},
+	{
+		"type": "range",
+		"id": "column1",
+		"min": 1,
+		"max": 5,
+		"step": 1,
+		"label": "Number of Columns on 992px to 1199px",
+		"default": 4,
+		"info": "Desktops"
+	},
+	{
+		"type": "range",
+		"id": "column2",
+		"min": 1,
+		"max": 5,
+		"step": 1,
+		"label": "Number of Columns on 768px to 991px",
+		"default": 3,
+		"info": "Laptop"
+	},
+	{
+		"type": "range",
+		"id": "column3",
+		"min": 1,
+		"max": 5,
+		"step": 1,
+		"label": "Number of Columns on 480px to 767px",
+		"default": 1,
+		"info": "Tablets"
+	},
+	{
+		"type": "range",
+		"id": "column4",
+		"min": 1,
+		"max": 5,
+		"step": 1,
+		"label": "Number of Columns in 480px or less than",
+		"default": 1,
+		"info": "Mobile phone"
+	}
+  ],
+  	"blocks": [
+		{
+			"type": "css",
+			"name": "Custom css",
+			"limit": 1,
+			"settings": [
+				{
+					"type": "header",
+					"content": "----- Customer button -----"
+				},
+				{
+					"type": "select",
+					"id": "text_align",
+					"label": "Text align",
+					"options": [
+						{
+							"value": "left",
+							"label": "Left"
+						},
+						{
+							"value": "center",
+							"label": "Center"
+						},
+						{
+							"value": "right",
+							"label": "Right"
+						}
+					],
+					"default": "center"
+				},
+				{
+					"type": "number",
+					"id": "font_icon",
+					"label": "Font size icon",
+					"default": 14,
+					"info": "px"
+				},
+				{
+					"type": "number",
+					"id": "pos_top",
+					"label": "Position top",
+					"default": 0,
+					"info": "px"
+				},
+				{
+					"type": "number",
+					"id": "pos_left",
+					"label": "Position left",
+					"default": 0,
+					"info": "px"
+				},
+				{
+					"type": "checkbox",
+					"id": "border",
+					"label": "Turn on border",
+					"default": false
+				},
+				{
+					"type": "text",
+					"id": "border_radius_button",
+					"label": "Border radius",
+					"default": "0px 0px 0px 0px",
+					"info": "top right bottom left"
+				},
+				{
+					"type": "text",
+					"id": "border_width",
+					"label": "Border width",
+					"default": "0px 0px 0px 0px",
+					"info": "top right bottom left"
+				},
+				{
+					"type": "header",
+					"content": "Color Default"
+				},
+				{
+					"type": "color",
+					"id": "color_button",
+					"label": "color",
+					"default": "#000"
+				},
+				{
+					"type": "color",
+					"id": "background_button",
+					"label": "Background",
+					"default": "#fff"
+				},
+				{
+					"type": "color",
+					"id": "border_color",
+					"label": "Border color",
+					"default": "#fff"
+				},
+				{
+					"type": "header",
+					"content": "Color Hover"
+				},
+				{
+					"type": "color",
+					"id": "color_hover_button",
+					"label": "Color hover",
+					"default": "#fff"
+				},
+				{
+					"type": "color",
+					"id": "background_hover_button",
+					"label": "Background Hover",
+					"default": "#ed5d43"
+				},
+				{
+					"type": "color",
+					"id": "border_color_hover",
+					"label": "Border color hover",
+					"default": "#fff"
+				},
+				{
+					"type": "number",
+					"id": "font_size_button",
+					"label": "Font size",
+					"default": 15,
+					"info": "px"
+				},
+				{
+					"type": "number",
+					"id": "line_height_button",
+					"label": "Line height",
+					"default": 45,
+					"info": "px"
+				},
+				{
+					"type": "number",
+					"id": "letter_spacing_button",
+					"label": "Letter spacing",
+					"default": 0,
+					"info": "px"
+				},
+				{
+					"type": "text",
+					"id": "font_weight_button",
+					"label": "Font Weight",
+					"default": "400"
+				},
+				{
+					"type": "text",
+					"id": "padding_button",
+					"label": "Padding",
+					"default": "0px 0px 0px 0px",
+					"info": "top right bottom left"
+				},
+				{
+					"type": "text",
+					"id": "margin_button",
+					"label": "Margin",
+					"default": "0px 0px 0px 0px",
+					"info": "top right bottom left"
+				},
+				{
+					"type": "header",
+					"content": "====== Mobile ======",
+					"info": "screen < 767px"
+				},
+				{
+					"type": "header",
+					"content": "----- Button -----"
+				},
+				{
+					"type": "number",
+					"id": "font_size_button_mobi",
+					"label": "Font size",
+					"default": 16,
+					"info": "px"
+				},
+				{
+					"type": "number",
+					"id": "line_height_button_mobi",
+					"label": "Line height",
+					"default": 22,
+					"info": "px"
+				},
+				{
+					"type": "text",
+					"id": "padding_button_mobi",
+					"label": "padding",
+					"default": "0px 0px 0px 0px",
+					"placeholder":"0px 0px 0px 0px"
+				},
+				{
+					"type": "text",
+					"id": "margin_button_mobi",
+					"label": "margin",
+					"default": "0px 0px 0px 0px",
+					"placeholder":"0px 0px 0px 0px"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Product grid loadmore",
+			"category": "3. Product",
+			"blocks": [
+				{
+				"type": "css"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

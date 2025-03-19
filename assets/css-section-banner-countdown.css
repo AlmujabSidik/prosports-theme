@@ -1,0 +1,100 @@
+.bwp-widget-countdown .wpbingo-section__inner .wpbingo-section__content{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.bwp-widget-countdown .wpbingo-section__inner .content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 -15px;
+  position: relative;
+}
+.bwp-widget-countdown .wpbingo-section__inner .image-banner-countdown {
+  max-width: 59%;
+  flex: 0 0 59%;
+  padding: 0 15px;
+  text-align: center;
+}
+.bwp-widget-countdown .wpbingo-section__inner .content-banner-countdown {
+  max-width: 41%;
+  flex: 0 0 41%;
+  padding: 0 15px;
+  margin: 45px 0 -100px;
+}
+.bwp-widget-countdown .wpbingo-section__inner .content-info-countdown {
+  display: flex;
+  justify-content: center;
+  background: var(--theme-color);
+}
+.bwp-widget-countdown .wpbingo-section__inner .content-info-countdown .info {
+  padding: 130px 50px 130px 15px;
+}
+.bwp-widget-countdown .bwp-image{
+  position: relative;
+  z-index: 2;
+}
+.bwp-widget-countdown .countdown .countdown__item {
+  display:inline-block;
+  padding-right:10px;
+  text-align: center;
+}
+.bwp-widget-countdown .countdown__item:last-child{
+  padding: 0;
+}
+.bwp-widget-countdown img.hover-circular{
+  animation: rotation 15s infinite linear;
+}
+.bwp-widget-countdown .bwp-button i{
+  right: 2px;
+  transition: all .3s ease;
+}
+.bwp-widget-countdown .bwp-button:hover i {
+  right: -3px;
+}
+.bwp-widget-countdown .bwp-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+.bwp-widget-countdown .bwp-button:before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: all .3s ease;
+}
+.bwp-widget-countdown .bwp-button:hover:before {
+  width: 100%;
+  left: 0;
+}
+@media(max-width: 1199px){
+  .bwp-widget-countdown .wpbingo-section__inner .content-banner-countdown {
+    margin: 0;
+  }
+  .bwp-widget-countdown .wpbingo-section__inner .content-info-countdown .info {
+    padding: 100px 15px;
+  }
+}
+@media(max-width: 991px){
+  .bwp-widget-countdown .wpbingo-section__inner .content-info-countdown .info {
+    padding: 60px 15px;
+  }
+}
+@media(max-width: 767px){
+  .bwp-widget-countdown .countdown__item{
+    padding-right:10px;
+  }
+  .bwp-widget-countdown .wpbingo-section__inner .image-banner-countdown,
+  .bwp-widget-countdown .wpbingo-section__inner .content-banner-countdown {
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding: 0 15px;
+    text-align: center;
+  }
+}
+

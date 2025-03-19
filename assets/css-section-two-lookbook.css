@@ -1,0 +1,50 @@
+/*================== TWO LOOKBOOK =============*/
+.two-lookbook .wpbingo-lookbook__contents{
+	display: flex;
+	flex-wrap: wrap;
+}
+.two-lookbook .wpbingo-lookbook__contents >div{
+	max-width: 50%;
+	flex: 0 0 50%;
+}
+.two-lookbook .wpbingo-lookbook__contents .lookbook__contents-right {
+  padding: 0 15px;
+}
+.two-lookbook .wpbingo-lookbook__contents .lookbook__contents-right .wpbingo-lookbook__item {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.two-lookbook .wpbingo-lookbook__contents .button-lookbook{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	transition: all .3s ease;
+  z-index: 1;
+}
+.two-lookbook .wpbingo-lookbook__contents .button-lookbook:before{
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: all .3s ease;
+}
+.two-lookbook .wpbingo-lookbook__contents .button-lookbook:hover:before{
+	width: 100%;
+  left: 0;
+}
+.two-lookbook .wpbingo-lookbook__contents .lookbook-card,
+.two-lookbook .wpbingo-lookbook__contents .lookbook-card img{
+	width: 100%;
+}
+.two-lookbook .wpbingo-lookbook__contents .lookbook__contents-right .lookbook-image{
+	margin: 0 0 0 auto;
+}
+@media(max-width: 767px){
+	.two-lookbook .wpbingo-lookbook__contents >div{
+		max-width: 100%;
+		flex: 0 0 100%;
+	}
+}

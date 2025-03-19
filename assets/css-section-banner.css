@@ -1,0 +1,95 @@
+.bwp-widget-banner .featured-banner {
+  position: relative;
+}
+.bwp-widget-banner .featured-banner .bwp-image {
+  overflow: hidden;
+}
+.bwp-widget-banner .banner-wrapper-infor {
+  width: 100%;
+  display: flex;
+}
+.bwp-widget-banner .banner-wrapper-infor.position-absolute {
+  position: absolute;
+}
+.bwp-widget-banner .bwp-button i{
+  right: 2px;
+  transition: all .3s ease;
+}
+.bwp-widget-banner .bwp-button:hover i {
+  right: -3px;
+}
+.bwp-widget-banner .bwp-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+.bwp-widget-banner .bwp-button:before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: all .3s ease;
+}
+.bwp-widget-banner .bwp-button:hover:before {
+  width: 100%;
+  left: 0;
+}
+.bwp-widget-banner .bwp-button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  transition: all .3s ease;
+}
+.bwp-widget-banner .bwp-button:hover:after {
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bwp-widget-banner .row--banners {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.bwp-widget-banner .container-full .row--banners{
+  margin: 0;
+}
+.bwp-widget-banner.style-2 .banner-wrapper-infor {
+  height: 100%;
+}
+.bwp-widget-banner.style-2 .bwp-button {
+  position: absolute;
+  bottom: 65px;
+  right: 40px;
+}
+.bwp-widget-banner.style-3 .banner-wrapper-infor {
+  max-width: 550px;
+  margin: 0 auto;
+  box-shadow: -1px 0px 15.48px 2.52px rgba(0, 0, 0, .05);
+}
+@media (max-width: 1440px) {
+  .bwp-widget-banner.style-3 .banner-wrapper-infor {
+    max-width: 450px;
+  }
+}
+@media (max-width: 1199px) {
+  .bwp-widget-banner.style-3 .banner-wrapper-infor {
+    max-width: calc(100% - 60px);
+  }
+}
+@media (max-width: 991px) {
+  .bwp-widget-banner.style-2 .bwp-button {
+    bottom: 25px;
+    right: 25px;
+  }
+  .bwp-widget-banner.style-3 .banner-wrapper-infor {
+    max-width: calc(100% - 30px);
+  }
+}

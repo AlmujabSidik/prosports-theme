@@ -1,0 +1,106 @@
+.bwp-widget-countdown-product .wpbingo-section__content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  position: relative;
+  margin: 0 -5px;
+}
+.bwp-widget-countdown-product .content-left {
+  max-width: 32.4%;
+  flex: 0 0 32.4%;
+  padding: 0 5px;
+}
+.bwp-widget-countdown-product .content-right {
+  max-width: 67.6%;
+  flex: 0 0 67.6%;
+  padding: 0 5px;
+}
+.bwp-widget-countdown-product .slick-list {
+  margin: 0 -5px;
+}
+.bwp-widget-countdown-product .slick-slide {
+  padding: 0 5px;
+}
+.bwp-widget-countdown-product .content-info-countdown {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.bwp-widget-countdown-product .bwp_slider-carousel {
+  height: 100%;
+}
+.bwp-widget-countdown-product .countdown-deal .countdown>div {
+  display:inline-block;
+  padding-right:10px;
+  text-align: center;
+}
+.bwp-widget-countdown-product .countdown-deal .countdown__item:last-child{
+  padding-right: 0;
+}
+.bwp-widget-countdown-product .countdown-deal .countdown>div span:first-child {
+  font-family: var(--font-family-second);
+}
+.bwp-widget-countdown-product .bwp-button {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  border: 0;
+  text-transform: revert;
+}
+.bwp-widget-countdown-product .bwp-button:before {
+  position: absolute;
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .3s ease;
+}
+.bwp-widget-countdown-product .bwp-button:hover:before {
+  width: 100%;
+  left: 0;
+}
+.bwp-widget-countdown-product .bwp-button i {
+  transition: all .3s ease;
+  right: 0;
+}
+.bwp-widget-countdown-product .bwp-button:hover i {
+  right: -5px;
+}
+.bwp-widget-countdown-product .product-card {
+  margin-bottom: 0px;
+}
+@media(max-width: 1199px){
+  .bwp-widget-countdown-product .content-left {
+    max-width: 33.33333%;
+    flex: 0 0 33.33333%;
+  }
+  .bwp-widget-countdown-product .content-right {
+    max-width: 66.66667%;
+    flex: 0 0 66.66667%;
+  }
+}
+@media(max-width: 991px){
+  .bwp-widget-countdown-product .countdown-deal .countdown>div{
+    padding-right:6px;
+  }
+}
+
+@media(max-width: 767px){
+  .bwp-widget-countdown-product .content-left {
+    max-width: 100%;
+    flex: 0 0 100%;
+    order: 2;
+  }
+  .bwp-widget-countdown-product .content-right {
+    max-width: 100%;
+    flex: 0 0 100%;
+    order: 1;
+    margin-bottom: 15px;
+  }
+  .bwp-widget-countdown-product .countdown-deal .countdown>div{
+    padding-right:10px;
+  }
+}
+

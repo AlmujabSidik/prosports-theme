@@ -1,0 +1,62 @@
+.wpbingo-section--accordion .wpbingo-accordion {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 15px;
+}
+.wpbingo-section--accordion .wpbingo-accordion:last-child {
+  border: 0;
+  margin: 0;
+}
+.wpbingo-section--accordion .wpbingo-sub-btn a {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  border: 0;
+  text-transform: revert;
+  transition: all .3s ease;
+}
+.wpbingo-section--accordion .wpbingo-sub-btn a:before {
+  position: absolute;
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .3s ease;
+}
+.wpbingo-section--accordion .wpbingo-sub-btn a:hover:before {
+  width: 100%;
+  left: 0;
+}
+.wpbingo-section--accordion .content-accordion {
+  width: 50%;
+}
+.wpbingo-section--accordion.accordion .wpbingo-accordion:first-child .wpbingo-description {
+  display: block;
+}
+.wpbingo-section--accordion.accordion .wpbingo-accordion .wpbingo-title {
+  position: relative;
+  padding-right: 30px;
+}
+.wpbingo-section--accordion.accordion .wpbingo-accordion .wpbingo-title:before {
+  content: "\e92e";
+  font-family: feather;
+  position: absolute;
+  right: 0;
+  transition: all .3s ease;
+  font-size: 18px;
+}
+.wpbingo-section--accordion.accordion .wpbingo-accordion.active .wpbingo-title:before {
+  transform: rotate(180deg);
+}
+.wpbingo-section--accordion.accordion .wpbingo-accordion .wpbingo-description {
+  display: none;
+}
+@media (max-width: 767px) {
+  .wpbingo-section--accordion .content-accordion {
+    width: 100%;
+  }
+  .wpbingo-section--accordion.accordion .wpbingo-accordion .wpbingo-description {
+    display: none;
+  }
+}

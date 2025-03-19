@@ -1,0 +1,28 @@
+.wpbingo-section--title-marquee ul{
+  list-style: none;
+  display: flex;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+.wpbingo-section--title-marquee ul li{
+  -webkit-animation-name: marquee;
+  animation-name: marquee;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.wpbingo-section--title-marquee ul li .wpbingo-title {
+  text-transform: uppercase;
+  font-family: var(--font-family-second);
+}
+.wpbingo-section--title-marquee ul li .wpbingo-title a{
+  margin: 0 20px;
+}
+.wpbingo-section--title-marquee ul li .wpbingo-title a:nth-child(2n){
+  color: var(--gray-dark)!important;
+}
+.wpbingo-section--title-marquee ul:hover li{
+  animation-play-state: paused;
+}

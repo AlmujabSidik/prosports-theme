@@ -1,0 +1,89 @@
+.main-menu__nav-item>a:before {
+  color: white !important;
+  display: none;
+}
+
+.main-menu__nav-item>a:hover {
+  color: #f2f2f2 !important;
+}
+  .order:hover {
+  color: #000 !important;
+}
+
+#shopify-section-template--18937700450522__slideshow .button_slider-4, #shopify-section-template--18937700450522__featured_title_dUkGeQ .wpbingo-section--title-button .button-3 a {
+  background-color: #2F2FC9 !important;
+  color: #ffffff !important;
+}
+
+#shopify-section-template--18937700450522__slideshow .button_slider-4:hover {
+  color: #000000 !important;
+}
+
+.product-card__on-sale {
+  background-color: #2F2FC9 !important;
+  color: #ffffff !important;
+}
+
+.product-card.hover_style_3 .product-card__quickview:not(.mobile)>a:hover {
+  background-color: #2F2FC9 !important;
+  color: #ffffff !important;
+} 
+
+.ask-share .button-compare button.active {
+    color: #828282 !important;
+}
+
+.ask-share .delivery_return .delivery_return-title {
+   color: #828282 !important;
+}
+
+.ask-share .button-compare button:hover, .ask-share .delivery_return .delivery_return-title:hover {
+    color: #000000 !important;
+}
+
+.product-single .product-single__buttons .btn--add-to-cart:hover {
+  background-color: #2F2FC9 !important;
+  color: white !important;
+}
+
+.verify-popup .group-button button:hover {
+  background-color: #f2f2f2 !important;
+}
+
+
+
+.footer-center .social-icons li a:hover, .drawer__inner .ajaxcart__footer .ajaxcart__info .ajaxcart__info_header>div:hover i, .drawer__inner .ajaxcart__footer .ajaxcart__info .ajaxcart__info_header>div:hover span, .cart-product-info__qty .wpbingo-qty button:not([disabled]):hover, .cart-product-info__btn--remove:hover, .product-single .product-single__buttons .product-quantity .wpbingo-qty__adjust--plus:hover, .product-single .product-single__buttons .product-quantity .wpbingo-qty__adjust--minus:hover, .compare__table .remove-compare button:hover,
+.quickview__content .product-quickview .bwp-single-info .product-quickview__buttons .product-quantity .wpbingo-qty__adjust--plus:hover, .quickview__content .product-quickview .bwp-single-info .product-quickview__buttons .product-quantity .wpbingo-qty__adjust--minus:hover
+
+{
+    color: #828282 !important;
+}
+
+#before-you-leave .content-top h2 {
+  color: white !important;
+}
+
+#before-you-leave .desc span {
+  color: #000 !important;
+}
+button.btn.cart-modal__btn.cart-modal__btn--checkout:hover {
+  background-color: #2F2FC9 !important;
+  color: white !important;
+}
+
+button.btn.cart-modal__btn.cart-modal__btn--viewcart:hover {
+  background-color: #f2f2f2 !important;
+}
+
+.header-page-link .wishlist:hover, .header-cart__link:hover, .search-toggle:hover, .header-mobile .button-menu .menu-mobile__btn:hover {
+  color: #F2F2ED !important;
+}
+
+.bwp-footer .social-icons li a:hover {
+  fill: #828282 !important;
+}
+
+.compare__table .product-card__form .btn--add-to-cart:hover, .compare__table .product-card__form .btn-link:hover, .quickview__content .product-quickview .bwp-single-info .product-quickview__buttons .btn--add-to-cart:hover {
+  background-color: #2F2FC9 !important;
+  color: white !important;
+}

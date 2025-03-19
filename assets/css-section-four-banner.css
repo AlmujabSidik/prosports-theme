@@ -1,0 +1,175 @@
+.wpbingo-section--four-banner .wpbingo-section__content{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -7.5px;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-image {
+  overflow: hidden;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .single-banner{
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 7.5px;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .group-banner{
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-3,
+.wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-4{
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 7.5px;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-2{
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 7.5px;
+  margin-bottom: 15px;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-wrapper-infor{
+  display: flex;
+  width: 100%;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-wrapper-infor .info{
+  overflow: hidden;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .bwp-button:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background: var(--white);
+  transition: all .3s ease;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .bwp-button:hover:before{
+  width: 50%;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-1 .bwp-button {
+  color: white !important;
+  border: 2px solid var(--white) !important;
+  line-height: 40px !important;
+  padding: 0 25px !important;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-1 .bwp-button:hover {
+  background: var(--white) !important;
+  color: var(--gray-dark) !important;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-1 .bwp-button:before{
+  display: none;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-1 .title-banner {
+  color: var(--white) !important;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-1 .subtitle-banner {
+  color: var(--white) !important;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-2 .subtitle-banner{
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  line-height: 30px;
+  padding: 0 4px 0 13px;
+  background: #9a744d;
+  position: relative;
+  font-weight: 500;
+  margin-bottom: 20px !important;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-2 .subtitle-banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 13px solid #9a744d;
+  right: -26px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-1 .banner-wrapper-infor{
+  justify-content: center;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 15px;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-2 .banner-wrapper-infor{
+  justify-content: left;
+  text-align: left;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 35px;
+}
+.wpbingo-section--four-banner .wpbingo-section__content .banner-3 .banner-wrapper-infor,
+.wpbingo-section--four-banner .wpbingo-section__content .banner-4 .banner-wrapper-infor{
+  justify-content: left;
+  text-align: left;
+  bottom: 35px;
+  padding: 0 35px;
+}
+
+@media(min-width: 768px){
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-1 .title-banner{
+    font-size: 50px !important;
+    line-height: 55px !important;
+    margin-bottom: 25px !important;
+  }
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-2 .title-banner{
+    font-size: 34px !important;
+    line-height: 40px !important;
+  }
+}
+
+@media(max-width: 1199px) {
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-1 .banner-wrapper-infor,
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-2 .banner-wrapper-infor,
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-3 .banner-wrapper-infor,
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-4 .banner-wrapper-infor{
+    padding: 0 15px;
+  }
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-3 .banner-wrapper-infor,
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-4 .banner-wrapper-infor{
+    bottom: 15px;
+  }
+}
+
+@media(max-width: 991px) {
+  .wpbingo-section--four-banner .wpbingo-section__content .single-banner{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  .wpbingo-section--four-banner .wpbingo-section__content .group-banner{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-2 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-3,
+  .wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-3 .banner-wrapper-infor,
+  .wpbingo-section--four-banner .wpbingo-section__content .banner-4 .banner-wrapper-infor{
+    bottom: 35px;
+  }
+}
+@media(max-width: 767px) {
+  .wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-3 {
+    margin-bottom: 15px;
+  }
+  .wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-3,
+  .wpbingo-section--four-banner .wpbingo-section__content .group-banner .banner-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,158 @@
+{{ 'css-section-product-masonry.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.fullwidth -%}
+	{%- assign container = 'container-full' -%}
+{%- elsif section.settings.max_width != blank -%}
+	{%- assign container = 'bwp-container' -%}
+{%- else -%}
+	{%- assign container = 'container' -%}
+{%- endif -%}
+
+{%- assign max_width = '' -%}
+{%- if section.settings.fullwidth == blank and section.settings.max_width != blank -%}
+	{%- capture max_width -%}style="max-width: {{ section.settings.max_width }};"{%- endcapture -%}
+{%- endif -%}
+
+{%- assign heading = section.settings.title | escape -%}
+{%- assign collection_handle = section.settings.featured_products -%}
+{%- assign limit = section.settings.limit | plus: 0 -%}
+
+{% assign margin 	= section.settings.margin | split: "|" %}
+{% assign padding 	= section.settings.padding | split: "|" %}
+{%- style -%}
+	{%- if margin[0] != blank or padding[0] != blank -%}
+		#shopify-section-{{ section.id }} .wpbingo-section--products-masonry{
+			{%- if margin[0] != blank -%}margin: {{ margin[0] }};{%- endif -%}
+			{%- if padding[0] != blank -%}padding:{{ padding[0] }};{%- endif -%}
+		}
+	{%- endif -%}
+	{%- if margin[1] != blank or padding[1] != blank -%}
+		@media (max-width:1200px){
+			#shopify-section-{{ section.id }} .wpbingo-section--products-masonry{
+				{%- if margin[1] != blank -%}margin: {{ margin[1] }};{%- endif -%}
+				{%- if padding[1] != blank -%}padding:{{ padding[1] }};{%- endif -%}
+			}
+		}
+	{%- endif -%}
+	{%- if margin[2] != blank or padding[2] != blank -%}
+		@media (max-width:991px){
+			#shopify-section-{{ section.id }} .wpbingo-section--products-masonry{
+				{%- if margin[2] != blank -%}margin: {{ margin[2] }};{%- endif -%}
+				{%- if padding[2] != blank -%}padding:{{ padding[2] }};{%- endif -%}
+			}
+		}
+	{%- endif -%}
+	{%- if margin[3] != blank or padding[3] != blank -%}
+		@media (max-width:767px){
+			#shopify-section-{{ section.id }} .wpbingo-section--products-masonry{
+				{%- if margin[3] != blank -%}margin: {{ margin[3] }};{%- endif -%}
+				{%- if padding[3] != blank -%}padding:{{ padding[3] }};{%- endif -%}
+			}
+		}
+	{%- endif -%}
+{%- endstyle -%}
+<section class="wpbingo-section wpbingo-section--products-masonry overflow-hidden wpbingo-section--{{ section.id }}">
+	<div class="{{ container }}" {{ max_width }}>
+		<div class="wpbingo-section__inner">
+			{%- if heading != blank -%}
+				<div class="wpbingo-title{% if settings.show_title_bg %} wpbingo-title--bg-img{% endif %}">
+					<h3 class="wpbingo-title__heading">{{ heading }}</h3>
+				</div>
+			{%- endif -%}
+			<div class="wpbingo-section__content">
+				<div class="products__row">
+                    {%- assign j = 1 -%}
+                    {%- assign i = 1 -%}
+					{%- if collection_handle == blank or collections[collection_handle] == empty or collections[collection_handle].products_count == 0 -%}
+						{% include 'onboarding-featured-products' %}
+					{%- else -%}
+						{%- for product in collections[collection_handle].products limit: limit -%}
+						{%- assign collection = collections[section.settings.collection] -%}
+						{%- assign collection_handle = section.settings.collection -%}
+						{%- assign col = i | modulo:3 -%}
+						{%- assign modulo = j | modulo:3 -%}
+							{% if col == 1 %}
+								<div class="product-item">
+							{% endif %}
+								<div class="products__list{% if modulo == 1 %} item-two{% else %} item{% endif %}">
+									<div class="products__item">
+										{% include 'product-grid-hover-10' %}	
+									</div>
+								</div>
+							{% if col == 0 %}
+								</div>
+							{% endif %}
+							{%- assign i = i | plus: 1 -%}
+							{%- assign j = j | plus: 1 -%}
+						{%- endfor -%}
+					{%- endif -%}
+                  </div>
+			</div>
+		</div>
+	</div>
+</section>
+{% schema %}
+{
+	"name": "Products masonry",
+	"class": "wpbingo-framework",
+	"settings": [
+		{
+			"type": "header",
+			"content": "Layout settings"
+		},
+		{
+			"type": "text",
+			"id": "max_width",
+			"label": "Width container",
+			"info": "Default: 1440px"
+		},
+		{
+			"type": "checkbox",
+			"id": "fullwidth",
+			"label": "Fullwidth"
+		},
+		{
+			"type": "text",
+			"id": "padding",
+			"label": "Padding",
+			"placeholder": "0px 0px 0px 0px",
+			"info":"Screen: desktop | 1200px | 991px | 767px"
+		},
+		{
+			"type": "text",
+			"id": "margin",
+			"label": "Margin",
+			"placeholder": "0px 0px 0px 0px",
+			"info":"Screen: desktop | 1200px | 991px | 767px"
+		},
+		{
+			"type": "header",
+			"content": "General Settings"
+		},
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Heading"
+		},
+		{
+			"type": "collection",
+			"id": "featured_products",
+			"label": "Collection"
+		},
+		{
+			"type": "range",
+			"id": "limit",
+			"min": 1,
+			"max": 20,
+			"step": 1,
+			"label": "Number of products",
+			"default": 8
+		}
+	],
+	"presets": [
+		{
+			"name": "Products masonry",
+			"category": "3. Product"
+		}
+	]
+}
+{% endschema %}

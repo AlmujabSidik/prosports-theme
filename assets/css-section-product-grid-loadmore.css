@@ -1,0 +1,77 @@
+.wpbingo-section--product-grid-loadmore .product-more--btn{
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	transition: all .3s ease;
+	z-index: 1;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+    transition: all .3s ease;
+	background: var(--theme-color);
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn:hover:before {
+    height: 100%;
+	top: 0;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn .lds-ellipsis{
+	display: inline-block;
+	position: absolute;
+	width: 65px;
+	height: 38px;
+	top: calc(50% - 5px);
+	left: calc(50% - 32.5px);
+	opacity: 0;
+	visibility: hidden;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading span,
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading i{
+	opacity: 0;
+	visibility: hidden;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading .lds-ellipsis{
+	opacity: 1;
+	visibility: visible;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading .lds-ellipsis >div{
+	position: absolute;
+	top: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--gray-dark);
+	animation-timing-function: cubic-bezier(0,1,1,0);
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading:hover .lds-ellipsis >div{
+	background: var(--white);
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading .lds-ellipsis >div:first-child{
+	left: 5px;
+	animation: lds-ellipsis1 .6s infinite;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading .lds-ellipsis >div:nth-child(2){
+	left: 5px;
+	animation: lds-ellipsis2 .6s infinite;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading .lds-ellipsis >div:nth-child(3){
+	left: 29px;
+	animation: lds-ellipsis2 .6s infinite;
+}
+.wpbingo-section--product-grid-loadmore .product-more--btn.loading .lds-ellipsis >div:nth-child(4){
+	left: 53px;
+	animation: lds-ellipsis3 .6s infinite;
+}
+@media (max-width: 1200px) {
+	.wpbingo-section--product-grid-loadmore .row{
+		margin: 0 -7.5px;
+	}
+	.wpbingo-section--product-grid-loadmore .row .slick-carousel__item{
+		padding: 0 7.5px;
+	}
+}

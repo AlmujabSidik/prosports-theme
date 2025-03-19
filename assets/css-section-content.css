@@ -1,0 +1,5 @@
+.wpbingo-section--rich-text .slick-arrow {
+  opacity: 1;
+  visibility: visible;
+  top: calc(50% - 15px);
+}

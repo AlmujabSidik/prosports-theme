@@ -1,0 +1,61 @@
+/*=============== SECTION TESTIMONIALS ===========*/
+.wpbingo-section--testimonials .content-info .testimonial-card__name {
+  position: relative;
+}
+.wpbingo-section--testimonials .slick-dots {
+  display: flex !important;
+  margin-top: 10px;
+}
+.wpbingo-section--testimonials .content-image {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.wpbingo-section--testimonials .testimonial-card__rating:before, .wpbingo-section--testimonials .testimonial-card__rating:after {
+  display: inline-block;
+  color: #fdb313;
+  font-family: FontAwesome;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 9px;
+}
+.wpbingo-section--testimonials .testimonial-card__rating:after {
+  color: #e1e1e1;
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--1:before {
+  content: "\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--1:after {
+  content: "\f005\f005\f005\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--2:before {
+  content: "\f005\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--2:after {
+  content: "\f005\f005\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--3:before {
+  content: "\f005\f005\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--3:after {
+  content: "\f005\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--4:before {
+  content: "\f005\f005\f005\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--4:after {
+  content: "\f005";
+}
+.wpbingo-section--testimonials .testimonial-card__rating.testimonial-card__rating--5:before {
+  content: "\f005\f005\f005\f005\f005";
+}
+@media (max-width: 767px) {
+	.wpbingo-section--testimonials .slick-dots {
+    display: inline-flex !important;
+    margin-top: 20px;
+  }
+  .wpbingo-section--testimonials .slick-arrow {
+    display: none !important;
+  }
+}

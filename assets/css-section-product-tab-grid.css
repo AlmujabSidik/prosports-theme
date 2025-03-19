@@ -1,0 +1,102 @@
+/*================= PRODUCT TABS ============*/
+.wpbingo-section--product-tabs-grid .wpbingo-section__content-top {
+  margin-bottom: 50px;
+}
+.wpbingo-section--product-tabs-grid .product-tabs__nav {
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+}
+.wpbingo-section--product-tabs-grid .product-tabs__nav ul {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+}
+.wpbingo-section--product-tabs-grid .product-tabs__nav ul li {
+  display: inline-block;
+  white-space: nowrap;
+}
+.wpbingo-section--product-tabs-grid .product-tabs__nav ul li:nth-last-child(-n + 2):after {
+  display: none;
+}
+.wpbingo-section--product-tabs-grid .product-tabs__nav ul li a {
+  position: relative;
+  display: inline-block;
+  transition: all .3s ease;
+  font-family: var(--font-family-second);
+}
+.wpbingo-section--product-tabs-grid .product-tabs__nav ul li a:after {
+  content: "";
+  position: relative;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  width: 2px;
+  height: 18px;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  background: var(--gray-dark);
+  margin: 0 30px;
+}
+.wpbingo-section--product-tabs-grid .product-tabs__nav ul li:last-child a:after {
+  display: none;
+}
+.wpbingo-section--product-tabs-grid .row {
+  margin: 0 -5px;
+}
+.wpbingo-section--product-tabs-grid .row > div {
+  padding: 0 5px;
+}
+.wpbingo-section--product-tabs-grid .product-card {
+  margin-bottom: 10px;
+}
+.wpbingo-section--product-tabs-grid .slick-arrow {
+  box-shadow: unset;
+}
+.wpbingo-section--product-tabs-grid .slick-arrow:hover {
+  background: transparent;
+  color: var(--theme-color);
+}
+.wpbingo-section--product-tabs-grid .button-view {
+  text-align: center;
+  margin-top: 50px;
+}
+.wpbingo-section--product-tabs-grid .button-view a {
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 30px;
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gray-dark);
+  border:1px solid var(--border-color);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.wpbingo-section--product-tabs-grid .button-view a:hover {
+  border-color: var(--theme-color);
+  background: var(--theme-color);
+  color: var(--gray-dark);
+}
+@media (max-width: 1199px) {
+  .wpbingo-section--product-tabs-grid .tab-content .row {
+    margin: 0 -7.5px;
+  }
+  .wpbingo-section--product-tabs-grid .tab-content .row>div {
+    padding: 0 7.5px;
+  }
+}
+@media (max-width: 767px) {
+  .wpbingo-section--product-tabs-grid .wpbingo-section__content-top {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .wpbingo-section--product-tabs-grid .product-tabs__nav .product-tabs__nav-link {
+    font-size: 20px;
+  }
+  .wpbingo-section--product-tabs-grid .wpbingo-title__heading {
+    text-align: center;
+  }
+}

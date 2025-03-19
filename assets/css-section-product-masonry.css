@@ -1,0 +1,48 @@
+.wpbingo-section--products-masonry .products__row {
+    display: flex;
+	margin: 0 -15px;
+}
+.wpbingo-section--products-masonry .countdown-product {
+    display: none;
+}
+.wpbingo-section--products-masonry .product-item {
+    flex: 50%;
+    max-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.wpbingo-section--products-masonry .product-item:last-child .item-two {
+    order: 3;
+}
+.wpbingo-section--products-masonry .product-card {
+    margin-bottom: 30px;
+}
+.wpbingo-section--products-masonry .products__list {
+    padding: 0 15px;
+}
+.wpbingo-section--products-masonry .item-two {
+    width: 100%;
+}
+.wpbingo-section--products-masonry .item {
+    width: 50%;
+}
+@media screen and (max-width: 1199px) {
+	.wpbingo-section--products-masonry .products__row {
+        margin: 0 -7.5px;
+    }
+	.wpbingo-section--products-masonry .products__list {
+		padding: 0 7.5px;
+	}
+	.wpbingo-section--products-masonry .product-card {
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 767px) {
+	.wpbingo-section--products-masonry .products__row {
+        flex-direction: column;
+    }
+	.wpbingo-section--products-masonry .product-item {
+        flex: 100%;
+        max-width: 100%;
+    }
+}

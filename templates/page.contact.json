@@ -1,0 +1,230 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "page-breadcrumb",
+      "settings": {
+        "enable": true,
+        "bgimage": true,
+        "show_pagetitle": true,
+        "show_breadcrumb": true,
+        "color_breadcrumb": "#000000",
+        "align_breadcrumb": "center"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "enable": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "featured_maps_TeRbXK": {
+      "type": "featured-maps",
+      "settings": {
+        "max_width": "",
+        "fullwidth": true,
+        "padding": "",
+        "margin": "0 0 100px | | 0 0 60px",
+        "contact_map": true,
+        "api_key": "",
+        "html_map": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3295.3954559059043!2d-122.20976090768!3d47.44803289685475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905d123ba9b17f%3A0x2d853674f304bd8f!2s1118%20S%2036th%20St%2C%20Renton%2C%20WA%2098055%2C%20USA!5e1!3m2!1sen!2sid!4v1736507807479!5m2!1sen!2sid\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+      }
+    },
+    "contact": {
+      "type": "featured-contact",
+      "blocks": {
+        "title_f7qMjm": {
+          "type": "title",
+          "settings": {
+            "title": "Address",
+            "font": "",
+            "color": "#000000",
+            "font_size": 20,
+            "line_height": 20,
+            "font_weight": "400",
+            "margin": "0px 0px 10px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 20,
+            "line_height_mobi": 20,
+            "margin_mobi": "0px 0px 10px 0px"
+          }
+        },
+        "desc_8H7qn9": {
+          "type": "desc",
+          "settings": {
+            "title": "1118 S 36th St Renton Washington 98055,\nUnited States",
+            "color": "#000000",
+            "font_size": 14,
+            "line_height": 24,
+            "font_weight": "400",
+            "margin": "0px 0px 25px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 14,
+            "line_height_mobi": 24,
+            "margin_mobi": "0px 0px 25px 0px"
+          }
+        },
+        "title_bRxNLr": {
+          "type": "title",
+          "settings": {
+            "title": "Phone",
+            "font": "",
+            "color": "#000000",
+            "font_size": 20,
+            "line_height": 20,
+            "font_weight": "400",
+            "margin": "0px 0px 10px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 20,
+            "line_height_mobi": 20,
+            "margin_mobi": "0px 0px 10px 0px"
+          }
+        },
+        "desc_hMcKmx": {
+          "type": "desc",
+          "settings": {
+            "title": "206-724-6330",
+            "color": "#000000",
+            "font_size": 14,
+            "line_height": 24,
+            "font_weight": "400",
+            "margin": "0px 0px 25px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 14,
+            "line_height_mobi": 24,
+            "margin_mobi": "0px 0px 25px 0px"
+          }
+        },
+        "title_imygzM": {
+          "type": "title",
+          "settings": {
+            "title": "Email",
+            "font": "",
+            "color": "#000000",
+            "font_size": 20,
+            "line_height": 20,
+            "font_weight": "400",
+            "margin": "0px 0px 10px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 20,
+            "line_height_mobi": 20,
+            "margin_mobi": "0px 0px 10px 0px"
+          }
+        },
+        "desc_zP9ymG": {
+          "type": "desc",
+          "settings": {
+            "title": "ray@prosportslabs.com",
+            "color": "#000000",
+            "font_size": 14,
+            "line_height": 24,
+            "font_weight": "400",
+            "margin": "0px 0px 25px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 14,
+            "line_height_mobi": 24,
+            "margin_mobi": "0px 0px 25px 0px"
+          }
+        },
+        "title_ntRhxF": {
+          "type": "title",
+          "settings": {
+            "title": "Opening Time",
+            "font": "",
+            "color": "#000000",
+            "font_size": 20,
+            "line_height": 20,
+            "font_weight": "400",
+            "margin": "0px 0px 10px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 20,
+            "line_height_mobi": 20,
+            "margin_mobi": "0px 0px 10px 0px"
+          }
+        },
+        "desc_Kp8RGp": {
+          "type": "desc",
+          "settings": {
+            "title": "Monday to Friday: 9:00 AM - 5:30 PM\nSaturday &amp; Sunday: 9:00 AM - 12:30 PM",
+            "color": "#000000",
+            "font_size": 14,
+            "line_height": 24,
+            "font_weight": "400",
+            "margin": "0px 0px 25px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 14,
+            "line_height_mobi": 24,
+            "margin_mobi": "0px 0px 25px 0px"
+          }
+        },
+        "title_jUfNiJ": {
+          "type": "title",
+          "settings": {
+            "title": "Follow Us On",
+            "font": "",
+            "color": "#000000",
+            "font_size": 20,
+            "line_height": 20,
+            "font_weight": "400",
+            "margin": "0px 0px 15px 0px",
+            "color_mobi": "#000000",
+            "font_size_mobi": 20,
+            "line_height_mobi": 20,
+            "margin_mobi": "0px 0px 15px 0px"
+          }
+        },
+        "social_hbfMfC": {
+          "type": "social",
+          "settings": {
+            "title": "",
+            "color": "#000000",
+            "font_size": 0,
+            "line_height": 0,
+            "font_weight": "",
+            "margin": "",
+            "color_mobi": "#000000",
+            "font_size_mobi": 0,
+            "line_height_mobi": 0,
+            "margin_mobi": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_f7qMjm",
+        "desc_8H7qn9",
+        "title_bRxNLr",
+        "desc_hMcKmx",
+        "title_imygzM",
+        "desc_zP9ymG",
+        "title_ntRhxF",
+        "desc_Kp8RGp",
+        "title_jUfNiJ",
+        "social_hbfMfC"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "padding": "",
+        "margin": "0 0 100px | | 0 0 60px",
+        "heading": "Get In Touch",
+        "contact_form": true
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main",
+    "featured_maps_TeRbXK",
+    "contact"
+  ]
+}

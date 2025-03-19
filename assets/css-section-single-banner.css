@@ -1,0 +1,77 @@
+/*================ SECTION BANNER ==========*/
+.wpbingo-section--single-banner .section__content .content {
+  max-width: 740px;
+  margin-left: auto;
+}
+.wpbingo-section--single-banner .wpbingo-button a {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s ease;
+  padding: 0 0 2px 0;
+}
+.wpbingo-section--single-banner .wpbingo-button a:before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: all .3s ease;
+}
+.wpbingo-section--single-banner .wpbingo-button a:hover:before {
+  width: 100%;
+  left: 0;
+}
+.wpbingo-section--single-banner .wpbingo-section__content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0 -15px;
+}
+.wpbingo-section--single-banner .wpbingo-section__content > div {
+	padding: 0 15px;
+	max-width: 50%;
+	flex: 0 0 50%;
+}
+.wpbingo-section--single-banner .wpbingo-section__inner.right .wpbingo-section__content .featured-banner{
+	order:2;
+}
+.wpbingo-section--single-banner .wpbingo-section__inner.right .wpbingo-section__content .section__content{
+	order:1;
+}
+.wpbingo-section--single-banner .wpbingo-section__inner.right .section__content .content{
+	padding-right: 45px;
+}
+.wpbingo-section--single-banner .wpbingo-section__inner.left .section__content .content {
+	padding-left: 45px;
+}
+@media (max-width:1199px){
+	.wpbingo-section--single-banner .wpbingo-section__inner.right .section__content .content{
+		padding-right: 0;
+	}
+	.wpbingo-section--single-banner .wpbingo-section__inner.left .section__content .content {
+		padding-left: 0;
+	}
+}
+@media (max-width: 1199px) {
+	.wpbingo-section--single-banner wpbingo-section__content {
+    margin: 0 -7.5px;
+  }
+  .wpbingo-section--single-banner .wpbingo-section__content > div {
+    padding: 0 7.5px;
+  }
+  .wpbingo-section--single-banner .section__content .content {
+    padding-left: 0;
+  }
+}
+@media (max-width: 767px) {
+	  .wpbingo-section--single-banner .section__content .content {
+    padding-left: 0;
+  }
+  .wpbingo-section--single-banner .wpbingo-section__content > div {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
