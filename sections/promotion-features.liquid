@@ -1,0 +1,174 @@
+{% schema %}
+{
+  "name": "Promotion Features",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Promotion Features Section"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promotion_feature",
+      "name": "Promotion Feature",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "feature_image",
+          "label": "Feature Image"
+        },
+        {
+          "type": "text",
+          "id": "feature_title",
+          "label": "Feature Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop now"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotion Features",
+      "blocks": [
+        {
+          "type": "promotion_feature"
+        },
+        {
+          "type": "promotion_feature"
+        },
+        {
+          "type": "promotion_feature"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="promotion-features">
+  <div class="container">
+    <div class="promotion-features__wrapper">
+      {% for block in section.blocks %}
+        {% if block.type == 'promotion_feature' %}
+          <div class="promotion-feature" {{ block.shopify_attributes }}>
+            <div class="promotion-feature__content">
+              <h3 class="promotion-feature__title">{{ block.settings.feature_title }}</h3>
+              <a href="{{ block.settings.button_link }}" class="promotion-feature__button">
+                {{ block.settings.button_text }}
+                {% render 'icon-arrow-right' %}
+              </a>
+            </div>
+            {% if block.settings.feature_image %}
+              <div class="promotion-feature__image">
+                <img
+                  src="{{ block.settings.feature_image | img_url: '300x300', crop: 'center' }}"
+                  alt="{{ block.settings.feature_title }}"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .promotion-features {
+    padding: 2rem 0;
+    background-color: #f7f7f7;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .promotion-features__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .promotion-features__wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .promotion-feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .promotion-feature__content {
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .promotion-feature__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: #333333;
+  }
+
+  .promotion-feature__button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .promotion-feature__button:hover {
+    color: #004c99;
+  }
+
+  .promotion-feature__button svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 0.25rem;
+  }
+
+  .promotion-feature__image {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 0.25rem;
+  }
+
+  .promotion-feature__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
